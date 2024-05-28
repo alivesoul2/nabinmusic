@@ -1,90 +1,65 @@
-/* Base styles */
+/* CSS for Music Animation */
 body {
+    font-family: Arial, sans-serif;
     background-color: #F7F7F7;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Centering content */
-.center {
+h2 {
+    margin-top: 30px;
+    color: #4FDE5B;
     text-align: center;
 }
 
-/* Header styles */
-header {
-    background-color: #333;
-    color: #4FDE5B;
-    padding: 20px 0;
-}
-
-header h2 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-/* Icon styles */
-.fa-neos {
-    color: #4FDE5B;
-}
-
-/* Section styles */
-section {
+h3 {
+    margin-top: 20px;
     color: #3E98CC;
 }
 
-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-section h3 {
-    color: #333;
-    margin: 20px 0 10px;
-}
-
-/* Video styles */
 video {
-    width: 100%;
-    max-width: 610px;
-    height: auto;
-    border: none;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    display: block;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    header h2 {
-        font-size: 1.8em;
-    }
-
-    section h2 {
-        font-size: 1.5em;
-    }
+/* Animation for Header */
+@keyframes neon {
+    0% { text-shadow: 0 0 5px #4FDE5B; }
+    50% { text-shadow: 0 0 20px #4FDE5B; }
+    100% { text-shadow: 0 0 5px #4FDE5B; }
 }
 
-@media (max-width: 480px) {
-    body {
-        background-color: #fff;
-    }
+h2 Big {
+    animation: neon 1.5s infinite alternate;
+}
 
-    header {
-        background-color: #4FDE5B;
-    }
+/* Animation for Video Thumbnails */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
 
-    .fa-neos {
-        color: #333;
-    }
+video:hover {
+    animation: pulse 0.5s infinite alternate;
+}
 
-    section {
-        padding: 0 20px;
-    }
+/* Animation for Horizontal Lines */
+hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #4FDE5B, #3E98CC, #4FDE5B);
+    margin: 20px auto;
+    width: 80%;
+}
 
-    section h2 {
-        font-size: 1.3em;
-    }
+/* Animation for Title */
+@keyframes colorChange {
+    0% { color: #4FDE5B; }
+    50% { color: #3E98CC; }
+    100% { color: #4FDE5B; }
+}
 
-    section h3 {
-        font-size: 1.1em;
-    }
+h2 i {
+    animation: colorChange 2s infinite alternate;
 }
